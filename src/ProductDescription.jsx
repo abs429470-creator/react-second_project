@@ -1,11 +1,14 @@
 import { useState } from "react";
 
-function ProductDescription({ ProductDescriptionShort, ProductDescriptionLong }) {
-    const [showDescription, setShowDescription] = useState(false);
+function ProductDescription({ ProductDescription, ProductFeatures }) {
+    const [showDescription, setShowDescription] = useState(true);
     return (
         <>
             <div>
-                <p>{ProductDescriptionShort}<br/>{showDescription ? "":ProductDescriptionLong}</p>
+                <p>{ProductDescription}<br /> {showDescription ? "" :
+                    <ul>
+                        {ProductFeatures.map((description) => (<li>{description}</li>))}
+                    </ul>}</p>
                 <button onClick={() => setShowDescription(!showDescription)}>{showDescription ? "הצג עוד" : "הצג פחות"}</button>
             </div>
         </>

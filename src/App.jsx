@@ -1,17 +1,27 @@
-import { useState } from 'react'
-import heroImg from './assets/hero.png'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
+import { useState } from "react"
+import dataProductList from "./productList.json"
 import './App.css'
-import QuantityCounter from './QuantityCounter'
+import ProductCard from './ProductCard'
 import ContactForm from './ContactForm'
 
 function App() {
-  
+  const [productList, setProductList] = useState(dataProductList);
   return (
     <>
-    <QuantityCounter ProductName={"כוסות זכוכית"} ProductDescriptionShort={"סט שישה כוסות זכוכית עמידות"} ProductDescriptionLong={"עמידות לשימוש יומיומי, ניתן לשטיפה במדיח כלים"} ProductPrice={25.62} />
-    <ContactForm></ContactForm>
+    <h1>החנות שלנו</h1>
+      <div id="productListDiv">
+        {
+          productList.map((product) => (
+            <>
+              <button onClick={() => setProductList(productList.filter((item) => item.id != product.id))}>❌</button>
+              <ProductCard Product={product}></ProductCard>
+            </>
+          ))
+        }
+      </div>
+      <div>
+        <ContactForm></ContactForm>
+      </div>
     </>
   )
 }
