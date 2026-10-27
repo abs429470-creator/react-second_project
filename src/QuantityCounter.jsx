@@ -1,9 +1,11 @@
 import { useState } from "react";
-function QuantityCounter({ ProductName, ProductPrice }) {
+import ProductDescription from './ProductDescription'
+function QuantityCounter({ ProductName,ProductDescriptionShort,ProductDescriptionLong, ProductPrice }) {
     const [quantity, setQuantity] = useState(0);
     return (
         <>
             <h3>{ProductName}</h3>
+            <ProductDescription ProductDescriptionShort={ProductDescriptionShort} ProductDescriptionLong={ProductDescriptionLong}></ProductDescription>
             <p>מחיר: ₪{ProductPrice.toFixed(2)}</p>
             <p>כמות: {quantity}</p>
             <p>סה"כ: ₪{(quantity * ProductPrice).toFixed(2)}</p>

@@ -4,11 +4,12 @@ import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 import './App.css'
 import QuantityCounter from './QuantityCounter'
+
 function App() {
   
   return (
     <>
-    <QuantityCounter ProductName="Example Product" ProductPrice={19.99} />
+    <QuantityCounter ProductName={"כוסות זכוכית"} ProductDescriptionShort={"סט שישה כוסות זכוכית עמידות"} ProductDescriptionLong={"עמידות לשימוש יומיומי, ניתן לשטיפה במדיח כלים"} ProductPrice={25.62} />
     </>
   )
 }
