@@ -1,15 +1,27 @@
 :root {
-  --text: #6b6375;
-  --text-h: #08060d;
-  --bg: #fff;
-  --border: #e5e4e7;
-  --code-bg: #f4f3ec;
-  --accent: #aa3bff;
-  --accent-bg: rgba(170, 59, 255, 0.1);
-  --accent-border: rgba(170, 59, 255, 0.5);
-  --social-bg: rgba(244, 243, 236, 0.5);
+  --text: #5d5470;
+  --text-h: #2d2340;
+  --bg: #fdfbff;
+  --bg-deep: #f6f0fc;
+  --surface: #ffffff;
+  --border: #e9e0f5;
+  --border-strong: #d8c8ee;
+  --code-bg: #f6f0fc;
+  --accent: #a97ee0;
+  --accent-hover: #8f5fd1;
+  --accent-deep: #5e3a91;
+  --accent-medium: #e2cef9;
+  --accent-bg: rgba(169, 126, 224, 0.12);
+  --accent-border: rgba(169, 126, 224, 0.45);
+  --gold: #c9a86a;
+  --gold-soft: rgba(201, 168, 106, 0.35);
+  --social-bg: rgba(246, 240, 252, 0.7);
+  --shadow-sm:
+    rgba(94, 58, 145, 0.06) 0 2px 8px;
   --shadow:
-    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+    rgba(94, 58, 145, 0.1) 0 14px 30px -12px, rgba(94, 58, 145, 0.06) 0 4px 10px -4px;
+  --shadow-lg:
+    rgba(94, 58, 145, 0.16) 0 24px 50px -18px, rgba(201, 168, 106, 0.12) 0 6px 18px -6px;
 
   --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
   --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
@@ -32,17 +44,29 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --text: #9ca3af;
-    --text-h: #f3f4f6;
-    --bg: #16171d;
-    --border: #2e303a;
-    --code-bg: #1f2028;
-    --accent: #c084fc;
-    --accent-bg: rgba(192, 132, 252, 0.15);
-    --accent-border: rgba(192, 132, 252, 0.5);
-    --social-bg: rgba(47, 48, 58, 0.5);
+    --text: #cdbfe2;
+    --text-h: #f5f0fc;
+    --bg: #1b1526;
+    --bg-deep: #221a30;
+    --surface: #251d33;
+    --border: #3a2e50;
+    --border-strong: #4c3d68;
+    --code-bg: #2b2138;
+    --accent: #c4a0ee;
+    --accent-hover: #d7bcf7;
+    --accent-deep: #efe3ff;
+    --accent-medium: #a78fc4;
+    --accent-bg: rgba(196, 160, 238, 0.16);
+    --accent-border: rgba(196, 160, 238, 0.5);
+    --gold: #dcc08a;
+    --gold-soft: rgba(220, 192, 138, 0.25);
+    --social-bg: rgba(58, 46, 80, 0.6);
+    --shadow-sm:
+      rgba(0, 0, 0, 0.35) 0 2px 8px;
     --shadow:
-      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
+      rgba(0, 0, 0, 0.45) 0 14px 30px -12px, rgba(0, 0, 0, 0.3) 0 4px 10px -4px;
+    --shadow-lg:
+      rgba(0, 0, 0, 0.55) 0 24px 50px -18px, rgba(220, 192, 138, 0.08) 0 6px 18px -6px;
   }
 
   #social .button-icon {

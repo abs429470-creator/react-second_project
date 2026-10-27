@@ -1,0 +1,57 @@
+/* כפתור מועדפים */
+
+/* מסגרת זהב עדינה — זהה בכל המצבים, לא משתנה במעבר */
+.favorite-button,
+.favorite-button:hover,
+.favorite-button--active,
+.favorite-button--active:hover {
+  border-color: var(--gold-soft);
+}
+
+.favorite-button {
+  align-self: flex-start;
+  padding: 6px 14px;
+  font: inherit;
+  font-size: 13px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition:
+    background-color 0.2s,
+    color 0.2s,
+    box-shadow 0.2s;
+  border-width: 1px;
+  border-style: solid;
+
+  /* מצב לא־מועדף: לוקח את ערכי המצב המועדף —
+     סגול בינוני, אותיות סגול כהה; מעבר לסגול בהיר */
+  color: var(--accent-deep);
+  background-color: var(--accent-medium);
+  box-shadow: 0 0 0 3px var(--accent-bg);
+
+  &:hover {
+    color: var(--accent-deep);
+    background-color: var(--bg-deep);
+    box-shadow:
+      0 0 0 3px var(--accent-bg),
+      var(--shadow-sm);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+}
+
+/* מצב מועדף: לוקח את ערכי המצב הלא־מועדף —
+   סגול כהה, אותיות לבנות; מעבר לסגול בינוני */
+.favorite-button--active {
+  color: #fff;
+  background-color: var(--accent-deep);
+  box-shadow: none;
+
+  &:hover {
+    color: #fff;
+    background-color: var(--accent-medium);
+    box-shadow: var(--shadow-sm);
+  }
+}

@@ -12,10 +12,10 @@ function App() {
       <div id="productListDiv">
         {
           productList.map((product) => (
-            <>
-              <button onClick={() => setProductList(productList.filter((item) => item.id != product.id))}>❌</button>
+            <div className="product-card" key={product.id}>
+              <button className="delete-button" onClick={() => setProductList(productList.filter((item) => item.id != product.id))}>❌</button>
               <ProductCard Product={product}></ProductCard>
-            </>
+            </div>
           ))
         }
       </div>

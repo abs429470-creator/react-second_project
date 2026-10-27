@@ -1,0 +1,172 @@
+/* כרטיס מוצר — סגול בהיר עם גימור זהב */
+
+.product-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 32px 28px 26px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+
+  /* פס זהב דק בראש הכרטיס */
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    inset-inline: 24px;
+    height: 2px;
+    border-radius: 0 0 2px 2px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    opacity: 0.8;
+  }
+
+  &:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent-border);
+    box-shadow: var(--shadow-lg);
+  }
+}
+
+.product-card__title {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 500;
+  letter-spacing: -0.2px;
+  color: var(--accent-deep);
+}
+
+.product-card__price {
+  margin-top: 4px;
+  font-size: 17px;
+  font-weight: 500;
+  color: var(--text-h);
+}
+
+.product-card__total {
+  margin: 0;
+  font-size: 15px;
+  color: var(--accent-deep);
+  letter-spacing: 0.2px;
+}
+
+/* מונה כמות */
+.quantity-counter {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 4px;
+  background: var(--accent-bg);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+}
+
+.quantity-counter__btn {
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  display: grid;
+  place-items: center;
+  font-size: 14px;
+  line-height: 1;
+  color: var(--accent-deep);
+  background: var(--surface);
+  border: 1px solid transparent;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+  transition:
+    background 0.2s,
+    border-color 0.2s,
+    transform 0.15s;
+
+  &:hover {
+    border-color: var(--accent-border);
+    transform: scale(1.06);
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+}
+
+.quantity-counter__value {
+  min-width: 22px;
+  margin: 0;
+  font-size: 18px;
+  font-weight: 500;
+  text-align: center;
+  color: var(--accent-deep);
+  font-variant-numeric: tabular-nums;
+}
+
+/* כפתורי סל ואיפוס */
+.product-card__actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.product-card__cart-btn,
+.product-card__clear-btn {
+  padding: 9px 20px;
+  font: inherit;
+  font-size: 15px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition:
+    background 0.2s,
+    color 0.2s,
+    border-color 0.2s,
+    box-shadow 0.2s,
+    opacity 0.2s;
+
+  &:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+}
+
+.product-card__cart-btn {
+  color: #fff;
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-hover) 100%);
+  border: 1px solid transparent;
+  box-shadow: var(--shadow-sm);
+
+  &:hover:not(:disabled) {
+    box-shadow: var(--shadow);
+    transform: translateY(-1px);
+  }
+
+  &:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+  }
+}
+
+.product-card__clear-btn {
+  color: var(--text);
+  background: transparent;
+  border: 1px solid var(--border-strong);
+
+  &:hover {
+    color: var(--accent-hover);
+    border-color: var(--accent-border);
+    background: var(--accent-bg);
+  }
+}
