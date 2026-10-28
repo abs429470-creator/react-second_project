@@ -1,12 +1,12 @@
 import { useState } from "react";
 import './FavoriteButton.css'
-function FuvoriteButton({ productName }) {
-    const [isFuvorite, setIsFuvorite] = useState(true);
+function FavoriteButton({ productName }) {
+    const [isFavorite, setIsFavorite] = useState(false);
     return (<>
-        <button className={"favorite-button" + (isFuvorite ? " favorite-button--active" : "")} onClick={()=>setIsFuvorite(!isFuvorite)}>{isFuvorite? "🤍 הוסף את "+productName+" למועדפים":"💜 מועדף"}
+        <button className={"favorite-button" + (isFavorite ? " favorite-button--active" : "")} onClick={()=>setIsFavorite(!isFavorite)}>{isFavorite? "💜 מועדף":"🤍 הוסף את "+productName+" למועדפים"}
         </button>
     </>
     )
 }
 
-export default FuvoriteButton
+export default FavoriteButton

@@ -1,0 +1,189 @@
+/* טופס הוספת מוצר — באותו קו עיצובי של כרטיס המוצר וטופס יצירת הקשר */
+
+.add-product {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 32px 28px 28px;
+  box-sizing: border-box;
+  text-align: start;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+
+  /* פס זהב דק בראש הטופס, כמו בכרטיס המוצר */
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    inset-inline: 24px;
+    height: 2px;
+    border-radius: 0 0 2px 2px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    opacity: 0.8;
+  }
+}
+
+.add-product__field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.add-product__label,
+.add-product__legend {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--accent-deep);
+  letter-spacing: 0.2px;
+}
+
+.add-product__input {
+  width: 100%;
+  padding: 11px 16px;
+  box-sizing: border-box;
+  font: inherit;
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--text-h);
+  background: var(--bg-deep);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
+
+  &::placeholder {
+    color: var(--text);
+    opacity: 0.6;
+  }
+
+  &:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px var(--accent-bg);
+  }
+
+  /* סימון שדה שגוי — אדום עדין שמתאים לסגול */
+  &[aria-invalid='true'] {
+    border-color: #c9607a;
+    box-shadow: 0 0 0 3px rgba(201, 96, 122, 0.12);
+  }
+}
+
+/* רשימת התכונות */
+.add-product__features {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.add-product__feature-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  & .add-product__input {
+    flex: 1;
+  }
+}
+
+.add-product__remove-btn {
+  flex-shrink: 0;
+  padding: 8px 14px;
+  font: inherit;
+  font-size: 13px;
+  color: var(--text);
+  background: transparent;
+  border: 1px solid var(--border-strong);
+  border-radius: 999px;
+  cursor: pointer;
+  transition:
+    color 0.2s,
+    background 0.2s,
+    border-color 0.2s;
+
+  &:hover {
+    color: var(--accent-hover);
+    border-color: var(--accent-border);
+    background: var(--accent-bg);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+}
+
+.add-product__add-feature-btn {
+  align-self: flex-start;
+  padding: 7px 18px;
+  font: inherit;
+  font-size: 14px;
+  color: var(--accent-hover);
+  background: transparent;
+  border: 1px dashed var(--accent-border);
+  border-radius: 999px;
+  cursor: pointer;
+  transition:
+    color 0.2s,
+    background 0.2s,
+    border-color 0.2s,
+    opacity 0.2s;
+
+  &:hover:not(:disabled) {
+    color: var(--accent-deep);
+    background: var(--accent-bg);
+    border-color: var(--accent);
+  }
+
+  &:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+}
+
+/* הודעת שגיאה */
+.add-product .form-error {
+  margin: 0;
+  font-size: 13px;
+  color: #c9607a;
+}
+
+/* כפתור שליחת הטופס — כמו כפתור יצירת הקשר */
+.add-product__submit-btn {
+  align-self: center;
+  margin-top: 4px;
+  padding: 10px 40px;
+  font: inherit;
+  font-size: 15px;
+  color: #fff;
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-hover) 100%);
+  border: 1px solid transparent;
+  border-radius: 999px;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+  transition:
+    box-shadow 0.2s,
+    transform 0.15s;
+
+  &:hover {
+    box-shadow: var(--shadow);
+    transform: translateY(-1px);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+}

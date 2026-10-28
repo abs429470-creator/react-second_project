@@ -42,36 +42,35 @@
   }
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --text: #cdbfe2;
-    --text-h: #f5f0fc;
-    --bg: #1b1526;
-    --bg-deep: #221a30;
-    --surface: #251d33;
-    --border: #3a2e50;
-    --border-strong: #4c3d68;
-    --code-bg: #2b2138;
-    --accent: #c4a0ee;
-    --accent-hover: #d7bcf7;
-    --accent-deep: #efe3ff;
-    --accent-medium: #a78fc4;
-    --accent-bg: rgba(196, 160, 238, 0.16);
-    --accent-border: rgba(196, 160, 238, 0.5);
-    --gold: #dcc08a;
-    --gold-soft: rgba(220, 192, 138, 0.25);
-    --social-bg: rgba(58, 46, 80, 0.6);
-    --shadow-sm:
-      rgba(0, 0, 0, 0.35) 0 2px 8px;
-    --shadow:
-      rgba(0, 0, 0, 0.45) 0 14px 30px -12px, rgba(0, 0, 0, 0.3) 0 4px 10px -4px;
-    --shadow-lg:
-      rgba(0, 0, 0, 0.55) 0 24px 50px -18px, rgba(220, 192, 138, 0.08) 0 6px 18px -6px;
-  }
+/* מצב כהה — נדלק על ידי כפתור בממשק (data-theme="dark" על <html>) */
+[data-theme="dark"] {
+  --text: #cdbfe2;
+  --text-h: #f5f0fc;
+  --bg: #1b1526;
+  --bg-deep: #221a30;
+  --surface: #251d33;
+  --border: #3a2e50;
+  --border-strong: #4c3d68;
+  --code-bg: #2b2138;
+  --accent: #c4a0ee;
+  --accent-hover: #d7bcf7;
+  --accent-deep: #efe3ff;
+  --accent-medium: #a78fc4;
+  --accent-bg: rgba(196, 160, 238, 0.16);
+  --accent-border: rgba(196, 160, 238, 0.5);
+  --gold: #dcc08a;
+  --gold-soft: rgba(220, 192, 138, 0.25);
+  --social-bg: rgba(58, 46, 80, 0.6);
+  --shadow-sm:
+    rgba(0, 0, 0, 0.35) 0 2px 8px;
+  --shadow:
+    rgba(0, 0, 0, 0.45) 0 14px 30px -12px, rgba(0, 0, 0, 0.3) 0 4px 10px -4px;
+  --shadow-lg:
+    rgba(0, 0, 0, 0.55) 0 24px 50px -18px, rgba(220, 192, 138, 0.08) 0 6px 18px -6px;
+}
 
-  #social .button-icon {
-    filter: invert(1) brightness(2);
-  }
+[data-theme="dark"] #social .button-icon {
+  filter: invert(1) brightness(2);
 }
 
 body {

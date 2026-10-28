@@ -85,6 +85,15 @@
   }
 }
 
+/* אזור טופס הוספת מוצר */
+.add-product-section {
+  padding: 0 32px 48px;
+
+  @media (max-width: 1024px) {
+    padding: 0 16px 32px;
+  }
+}
+
 /* אזור טופס יצירת הקשר */
 #root > div:last-child {
   padding: 0 32px 64px;
